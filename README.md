@@ -24,32 +24,32 @@ var divs = $('div');
 
 
 `getElementById`<br>
-`Zelekt('#foo') // => [div#foo]`<br><br>
+`$('#foo') // => [div#foo]`<br><br>
 
 `getElementsByClassName`<br>
-`Zelekt('.foo') // => [div.foo, div.foo]`<br><br>
+`$('.foo') // => [div.foo, div.foo]`<br><br>
 
 `getElementsByName`<br>
-`Zelekt('@foo') // => [div, div]`<br><br>
+`$('@foo') // => [div, div]`<br><br>
 
 `getElementsByTagName`<br>
-`Zelekt('div') // => [div, div, div, div]`<br><br>
+`$('div') // => [div, div, div, div]`<br><br>
 
 `querySelectorAll`<br>
 (put an asterisk before whatever CSS2/3-style selector you'd like to use)<br>
-`Zelekt('*div > input') // => [input, input]`<br><br>
+`$('*div > input') // => [input, input]`<br><br>
 
 Also accepts a `DOMElement` for cases in which recursive selection is necessary:<br>
-`Zelekt(document.getElementById('foo')) // => [div#foo]`<br><br>
+`$(document.getElementById('foo')) // => [div#foo]`<br><br>
 
 Set the context of the selector if you want:<br>
-`Zelekt('.foo', Zelekt('#bar')) // => [div.foo]`<br><br>
+`$('.foo', $('#bar')) // => [div.foo]`<br><br>
 
 You can also create an element and return it as your selection:<br>
 ```javascript
-var newElement = Zelekt( '<div id="foo" class="bar"></div>', 'appendTo', Zelekt('.baz') ); // => [div#foo.bar]
+var newElement = $( '<div id="foo" class="bar"></div>', 'appendTo', $('.baz') ); // => [div#foo.bar]
 
-var html = Zelekt('.baz')[0].innerHTML;        // => '<div id="foo" class="bar"></div>'
+var html = $('.baz')[0].innerHTML;        // => '<div id="foo" class="bar"></div>'
 ```
 
 ### Issues:
