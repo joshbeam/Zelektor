@@ -41,7 +41,14 @@ var divs = $('div');
 `Zelekt('*div > input') // => [input, input]`<br><br>
 
 Also accepts a `DOMElement` for cases in which recursive selection is necessary:<br>
-`Zelekt(document.getElementById('foo')) // => [div#foo]`
+`Zelekt(document.getElementById('foo')) // => [div#foo]`<br><br>
+
+You can also create an element and return it as your selection:<br>
+```javascript
+var newElement = Zelekt( '<div id="foo" class="bar"></div>', 'appendTo', Zelekt('.baz') ); // => [div#foo.bar]
+
+var html = Zelekt('.baz')[0].innerHTML;        // => '<div id="foo" class="bar"></div>'
+```
 
 ### Issues:
 
