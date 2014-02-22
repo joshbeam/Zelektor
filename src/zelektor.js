@@ -50,7 +50,7 @@ The MIT License (c) 2014, Joshua Beam
 //			Handle Zelekt( selector = string, context = string|undefined );
 			if(typeof selector === 'string') {
 
-				context = args[1] || document;
+				context = args[1][0] || document;
 
 //				Map the first character of the selector string to a method, like getElementById
 //				Similar to switch, case, default, but uses a plain object instead
