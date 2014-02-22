@@ -22,7 +22,6 @@ var divs = Zelekt('div');
 var divs = $('div');
 ```
 
-<br><br>
 
 `getElementById`<br>
 `Zelekt('#foo') // => [div#foo]`<br><br>
