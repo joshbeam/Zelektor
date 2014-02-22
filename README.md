@@ -8,6 +8,22 @@ Returns an array of one or more DOM elements.
 
 ### Use it:
 
+Assign the module to whatever variable you want:
+```javascript
+var Zelekt = //Zelektor.min.js code goes here
+//Or
+var $ = //Zelektor.min.js code goes here
+
+
+// Then...
+
+var divs = Zelekt('div');
+//OR
+var divs = $('div');
+```
+
+<br><br>
+
 `getElementById`<br>
 `Zelekt('#foo') // => [div#foo]`<br><br>
 

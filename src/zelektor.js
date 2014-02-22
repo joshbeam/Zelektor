@@ -7,7 +7,7 @@ The MIT License (c) 2014, Joshua Beam
 
 */
 
-;(function() {
+(function() {
 	function insertThisBeforeThat(newElement,element) {
 		element.parentElement.insertBefore(newElement,element);
 	}
