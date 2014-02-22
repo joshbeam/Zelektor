@@ -22,7 +22,7 @@ Returns an array of one or more DOM elements.
 
 `querySelectorAll`<br>
 (put an asterisk before whatever CSS2/3-style selector you'd like to use)<br>
-Zelekt('*div > input') // => [input, input]`<br><br>
+`Zelekt('*div > input') // => [input, input]`<br><br>
 
 Also accepts a `DOMElement` for cases in which recursive selection is necessary:<br>
 `Zelekt(document.getElementById('foo')) // => [div#foo]`
