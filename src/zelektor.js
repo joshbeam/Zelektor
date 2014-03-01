@@ -78,6 +78,10 @@ The MIT License (c) 2014, Joshua Beam
 
 				element = [selector];
 
+			} else if (selector instanceof Array) {
+				
+				element = selector;
+				
 			}
 
 //			Handle Zelekt( selector = HTML string , where = appendTo|prependTo|before|after, location = Zelekt('foo') );
