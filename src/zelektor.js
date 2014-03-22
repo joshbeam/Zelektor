@@ -33,6 +33,20 @@ The MIT License (c) 2014, Joshua Beam
 
 		return newElement;
 	}
+	
+	function makeArray(object) {
+//		Using this instead of [].slice because IE<9 does not support
+//		using [].slice for nodeList objects.
+		var result = [],
+			i = 0,
+			len = object.length;
+		
+		for(;i<len;i++) {
+			result.push(object[i]);
+		}
+		
+		return result;
+	}
 
 	return function Zelekt() {
 		var args = arguments,
@@ -71,7 +85,7 @@ The MIT License (c) 2014, Joshua Beam
 				element = context[method](selector);
 
 //				The element is made into an array, regardless of the number of elements
-				element = element.nodeType === 1 ? [element] : [].slice.call(element);
+				element = element.nodeType === 1 ? [element] : makeArray(element);
 
 //			Handle Zelekt(DOMElement)
 			} else if (selector.nodeType === 1) {
