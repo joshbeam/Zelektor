@@ -1,6 +1,9 @@
 # Zelektor
 
-A simple JavaScript selector engine (weighs about 830 bytes minified).
+####Recent updates:
+- 25 March 2014 &mdash; document.getElementsByClassName polyfill for IE<9 (uses querySelectorAll for IE8, and loops through all elements for IE<8)
+
+A simple JavaScript selector engine (weighs about 1kb minified).
 
 Returns an array of one or more DOM elements.
 
@@ -54,7 +57,7 @@ var html = $('.baz')[0].innerHTML;        // => '<div id="foo" class="bar"></div
 
 ### Issues:
 
-- Lack of testing across multiple browsers
+- Limited browser testing
 - Only supports CSS-style selectors through `querySelectorAll`
 
 <hr>

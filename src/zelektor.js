@@ -8,6 +8,39 @@ The MIT License (c) 2014, Joshua Beam
 */
 
 (function() {
+	if(!('getElementsByClassName' in document)) {
+	
+		document.getElementsByClassName = function(className) {
+			
+			if( 'querySelectorAll' in this ) {
+				
+				return this.querySelectorAll(className);
+				
+			} else {
+			
+				var element = this.getElementsByTagName('*'),
+					i = 0,
+					len = element.length,
+					result = [];
+
+				for(;i<len;i++) {
+					if(element[i].className.indexOf(className) > -1) {
+						result.push(element[i]);
+					}
+				}
+
+				return result;
+
+			}
+		}
+		
+	}
+	
+	// Won't work in IE < 8 (no Element.prototype until IE8)
+	if(!('getElementsByClassName' in Element.prototype)) {
+			Element.prototype.getElementsByClassName = document.getElementsByClassName;
+	}
+	
 	function insertThisBeforeThat(newElement,element) {
 		element.parentElement.insertBefore(newElement,element);
 	}
@@ -48,7 +81,7 @@ The MIT License (c) 2014, Joshua Beam
 		return result;
 	}
 
-	return function Zelekt() {
+	return function() {
 		var args = arguments,
 			len = args.length,
 			selector = args[0],
@@ -127,4 +160,4 @@ The MIT License (c) 2014, Joshua Beam
 		return element;
 
 	}
-}());
+})()
