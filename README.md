@@ -1,6 +1,7 @@
 # Zelektor
 
 ####Recent updates:
+- 31 March 2014 &mdash; document.getElementsByClassName polyfill redone and tested in IE8 (stable); no polyfill for IE5, 6, or 7
 - 25 March 2014 &mdash; document.getElementsByClassName polyfill for IE<9 (uses querySelectorAll for IE8, and loops through all elements for IE<8)
 
 A simple JavaScript selector engine (weighs about 1kb minified).

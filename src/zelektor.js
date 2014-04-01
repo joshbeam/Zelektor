@@ -14,24 +14,24 @@ The MIT License (c) 2014, Joshua Beam
 			
 			if( 'querySelectorAll' in this ) {
 				
-				return this.querySelectorAll(className);
+				return this.querySelectorAll('.'+className);
 				
-			} else {
-			
-				var element = this.getElementsByTagName('*'),
-					i = 0,
-					len = element.length,
-					result = [];
-
-				for(;i<len;i++) {
-					if(element[i].className.indexOf(className) > -1) {
-						result.push(element[i]);
-					}
-				}
-
-				return result;
-
-			}
+			} //else {
+//			
+//				var element = this.getElementsByTagName('*'),
+//					i = 0,
+//					len = element.length,
+//					result = [];
+//
+//				for(;i<len;i++) {
+//					if(element[i].className.indexOf(className) > -1) {
+//						result.push(element[i]);
+//					}
+//				}
+//
+//				return result;
+//
+//			}
 		}
 		
 	}
